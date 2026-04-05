@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 
 interface ProjectCardProps {
@@ -76,14 +76,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                       <thead>
                         <tr>
                           <th className="bg-slate-100 border border-slate-300 w-8"></th>
-                          {excelMockupData.headers.map((h, i) => (
+                          {excelMockupData.headers.map((_, i) => (
                             <th key={i} className="bg-slate-100 border border-slate-300 px-2 py-1 font-semibold text-slate-600 text-center">{String.fromCharCode(65 + i)}</th>
                           ))}
                         </tr>
                         <tr>
                           <th className="bg-slate-100 border border-slate-300 text-center text-slate-400">1</th>
-                          {excelMockupData.headers.map((h, i) => (
-                            <td key={i} className="border border-slate-300 bg-slate-50 px-2 py-1 font-bold text-slate-700">{h}</td>
+                          {excelMockupData.headers.map((_, i) => (
+                            <td key={i} className="border border-slate-300 bg-slate-50 px-2 py-1 font-bold text-slate-700">{_}</td>
                           ))}
                         </tr>
                       </thead>

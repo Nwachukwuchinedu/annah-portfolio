@@ -29,7 +29,7 @@ export const TiltCard: React.FC<TiltCardProps> = ({ icon, title, description }) 
     <motion.div variants={itemVariants} style={{ perspective: 1000 }} className="h-full">
       <motion.div
         ref={cardRef}
-        {...bind()}
+        {...(bind() as any)}
         onMouseLeave={() => { x.set(0); y.set(0); }}
         style={{ rotateX, rotateY }}
         data-cursor="Read"

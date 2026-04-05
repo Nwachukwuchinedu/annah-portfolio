@@ -14,8 +14,7 @@ import {
   Map, 
   ArrowUpRight,
   Menu,
-  X,
-  ChevronRight
+  X
 } from 'lucide-react';
 
 // Hooks & Constants
