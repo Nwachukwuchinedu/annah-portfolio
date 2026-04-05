@@ -22,6 +22,7 @@
   ::-webkit-scrollbar-thumb:hover { background: #d97706; }
 }
 
+:root {
   font: 18px/1.6 'DM Sans', sans-serif;
   letter-spacing: -0.01em;
   color: #1e293b;
