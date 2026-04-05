@@ -22,6 +22,13 @@ import { useTypewriter } from './hooks/useTypewriter';
 import { ROLES } from './constants/roles';
 import { sectionVariants, itemVariants } from './constants/variants';
 
+// Assets
+import annahImg from './assets/annah.jpg';
+import unibenImg from './assets/university of benin.jpg';
+import energiaImg from './assets/energia.jpg';
+import speImg from './assets/spe_benin_section_logo.jpg';
+import chargeCircleImg from './assets/charge circle.jpg';
+
 // Components
 import { CustomCursor } from './components/common/CustomCursor';
 import { MagneticButton } from './components/common/MagneticButton';
@@ -212,7 +219,7 @@ export default function App() {
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 1.5, ease: "easeOut" }}
               style={{ y: aboutImgY }}
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop" 
+              src={annahImg} 
               alt="Annah Ibukun" 
               className="w-full h-[130%] object-cover object-center -mt-[15%]"
             />
@@ -326,13 +333,13 @@ export default function App() {
                   year: "Aug '21 - Sep '25", 
                   title: "Bachelor of Engineering - BE, Petroleum Engineering", 
                   desc: "University of Benin. Built a strong foundation in core petroleum principles, reservoir management, and field operations.",
-                  image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop"
+                  image: unibenImg
                 },
                 { 
                   year: "2022 - Present", 
                   title: "Society of Petroleum Engineers", 
                   desc: "Active SPE member and passionate volunteer, continuously networking with industry leaders and participating in technical symposiums.",
-                  image: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop"
+                  image: speImg
                 },
                 { 
                   year: "2023 - Present", 
@@ -344,13 +351,13 @@ export default function App() {
                   year: "Nov '24 - Feb '25", 
                   title: "Student Intern @ Energia", 
                   desc: "On-site internship in Lagos State, Nigeria. Gained hands-on experience in Petroleum Engineering operations and developed strong professional communication skills.",
-                  image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=800&auto=format&fit=crop"
+                  image: energiaImg
                 },
                 { 
                   year: "Dec '25 - Present", 
                   title: "Marketing Assistant @ Charge Circle", 
                   desc: "Part-time remote position. Broadening cross-functional expertise, managing digital initiatives, and demonstrating high adaptability in a fast-paced environment.",
-                  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop"
+                  image: chargeCircleImg
                 }
               ].map((item, i) => (
                 <div key={i} className="w-[350px] md:w-[450px] shrink-0 bg-white p-8 md:p-10 border border-slate-200/50 relative group flex flex-col" data-cursor="Read" style={{ boxShadow: "0 4px 20px rgba(0,0,0,0.02)" }}>
