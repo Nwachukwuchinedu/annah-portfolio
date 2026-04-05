@@ -37,7 +37,7 @@ export const ScrollSpySidebar = () => {
   }, []);
 
   return (
-    <div className="fixed right-8 top-1/2 -translate-y-1/2 z-[90] hidden md:flex flex-col gap-3 items-end">
+    <div className="fixed right-8 2xl:right-16 top-1/2 -translate-y-1/2 z-[90] hidden md:flex flex-col gap-3 items-end">
       {sections.map((sec) => {
         const isActive = activeSection === sec.id;
         return (

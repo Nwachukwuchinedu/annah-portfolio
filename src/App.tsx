@@ -137,55 +137,57 @@ export default function App() {
       </motion.nav>
 
       {/* HERO SECTION */}
-      <section id="hero" ref={heroRef} className="relative z-10 min-h-screen flex flex-col justify-center px-8 md:px-16 pt-24 max-w-7xl mx-auto overflow-hidden">
-        <AnimatePresence>
-          {isLoaded && (
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={sectionVariants}
-              style={{ y: heroY, opacity: heroOpacity }}
-            >
-              <motion.div variants={itemVariants} className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-slate-200 bg-white mb-8" style={{ boxShadow: "0 2px 10px rgba(0,0,0,0.02)" }}>
-                <span className="relative flex h-2 w-2">
-                  <motion.span 
-                    className="absolute inline-flex h-full w-full rounded-full bg-amber-400"
-                    animate={{ scale: [1, 2.5], opacity: [0.75, 0] }}
-                    transition={{ repeat: Infinity, duration: 1.5, ease: "easeOut" }}
-                  />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
-                </span>
-                <span className="text-xs font-sans tracking-widest uppercase font-semibold text-slate-600">Available for Opportunities</span>
-              </motion.div>
+      <section id="hero" ref={heroRef} className="relative z-10 min-h-screen flex flex-col justify-center px-8 md:px-16 2xl:px-32 pt-24 overflow-hidden">
+        <div className="max-w-[1600px] mx-auto w-full">
+          <AnimatePresence>
+            {isLoaded && (
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={sectionVariants}
+                style={{ y: heroY, opacity: heroOpacity }}
+              >
+                <motion.div variants={itemVariants} className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-slate-200 bg-white mb-8" style={{ boxShadow: "0 2px 10px rgba(0,0,0,0.02)" }}>
+                  <span className="relative flex h-2 w-2">
+                    <motion.span 
+                      className="absolute inline-flex h-full w-full rounded-full bg-amber-400"
+                      animate={{ scale: [1, 2.5], opacity: [0.75, 0] }}
+                      transition={{ repeat: Infinity, duration: 1.5, ease: "easeOut" }}
+                    />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                  </span>
+                  <span className="text-xs font-sans tracking-widest uppercase font-semibold text-slate-600">Available for Opportunities</span>
+                </motion.div>
 
-              <RevealText 
-                text="Pioneering the Future of Energy." 
-                className="font-serif text-6xl md:text-8xl lg:text-[7rem] leading-[1.05] tracking-tight text-slate-900 max-w-5xl mb-8" 
-              />
+                <RevealText 
+                  text="Pioneering the Future of Energy." 
+                  className="font-serif text-6xl md:text-8xl lg:text-[7rem] 2xl:text-[9rem] leading-[1.05] tracking-tight text-slate-900 max-w-6xl mb-8" 
+                />
 
-              <motion.div variants={itemVariants} className="text-xl md:text-2xl font-sans text-slate-500 mb-12 font-light flex flex-wrap gap-2 items-center">
-                <span>Graduate Engineer specializing as a</span>
-                <span className="font-medium text-amber-600 inline-block min-w-[200px]">
-                  {typewriterText}
-                  <motion.span 
-                    animate={{ opacity: [1, 0] }} 
-                    transition={{ repeat: Infinity, duration: 0.8 }} 
-                    className="ml-1 text-slate-300"
-                  >|</motion.span>
-                </span>
-              </motion.div>
+                <motion.div variants={itemVariants} className="text-xl md:text-2xl 2xl:text-3xl font-sans text-slate-500 mb-12 font-light flex flex-wrap gap-2 items-center">
+                  <span>Graduate Engineer specializing as a</span>
+                  <span className="font-medium text-amber-600 inline-block min-w-[200px]">
+                    {typewriterText}
+                    <motion.span 
+                      animate={{ opacity: [1, 0] }} 
+                      transition={{ repeat: Infinity, duration: 0.8 }} 
+                      className="ml-1 text-slate-300"
+                    >|</motion.span>
+                  </span>
+                </motion.div>
 
-              <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-6">
-                <MagneticButton primary={true} onClick={() => scrollTo('about')} className="px-8 py-4 rounded-full bg-slate-900 text-white font-sans text-sm tracking-wide border border-transparent">
-                  Explore My Work
-                </MagneticButton>
-                <MagneticButton primary={false} onClick={() => scrollTo('contact')} cursor="Mail" className="px-8 py-4 rounded-full bg-transparent border border-slate-300 text-slate-900 font-sans text-sm tracking-wide">
-                  Contact Me
-                </MagneticButton>
+                <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-6">
+                  <MagneticButton primary={true} onClick={() => scrollTo('about')} className="px-8 py-4 rounded-full bg-slate-900 text-white font-sans text-sm tracking-wide border border-transparent">
+                    Explore My Work
+                  </MagneticButton>
+                  <MagneticButton primary={false} onClick={() => scrollTo('contact')} cursor="Mail" className="px-8 py-4 rounded-full bg-transparent border border-slate-300 text-slate-900 font-sans text-sm tracking-wide">
+                    Contact Me
+                  </MagneticButton>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            )}
+          </AnimatePresence>
+        </div>
       </section>
 
       {/* STATS STRIP */}
@@ -193,7 +195,7 @@ export default function App() {
         initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={sectionVariants}
         className="relative z-10 border-y border-slate-200/50 bg-[#FAF9F6]"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3">
+        <div className="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-3">
           <AnimatedCounter end={4} label="Years of Study" />
           <AnimatedCounter end={12} suffix="+" label="Engineering Projects" />
           <AnimatedCounter end={100} suffix="%" label="Active SPE Member" />
@@ -201,8 +203,8 @@ export default function App() {
       </motion.section>
 
       {/* ABOUT SECTION */}
-      <section id="about" ref={aboutRef} className="relative z-10 py-32 px-8 md:px-16 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+      <section id="about" ref={aboutRef} className="relative z-10 py-32 px-8 md:px-16 2xl:px-32">
+        <div className="max-w-[1600px] mx-auto grid lg:grid-cols-2 gap-20 items-center">
           
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm" data-cursor="Look">
             <motion.div
@@ -256,16 +258,16 @@ export default function App() {
       </section>
 
       {/* EXPERTISE SECTION */}
-      <section id="expertise" className="relative z-10 py-32 px-8 md:px-16 bg-slate-50 border-y border-slate-200/50">
+      <section id="expertise" className="relative z-10 py-32 px-8 md:px-16 2xl:px-32 bg-slate-50 border-y border-slate-200/50">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
           variants={sectionVariants}
-          className="max-w-7xl mx-auto"
+          className="max-w-[1600px] mx-auto"
         >
           <motion.div variants={itemVariants} className="mb-20 text-center max-w-3xl mx-auto">
-            <h2 className="text-5xl font-serif text-slate-900 mb-6">Core Competencies</h2>
+            <h2 className="text-5xl font-serif text-slate-900 mb-6 font-medium">Core Competencies</h2>
             <p className="text-lg font-sans text-slate-600">A rigorous foundation in petroleum sciences, amplified by computational skills and a commitment to operational excellence.</p>
           </motion.div>
 
@@ -295,15 +297,15 @@ export default function App() {
       </section>
 
       {/* DATA IN ACTION: DEMO SECTION */}
-      <section id="data-demos" className="relative z-10 py-32 px-8 md:px-16 max-w-7xl mx-auto">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={sectionVariants}>
+      <section id="data-demos" className="relative z-10 py-32 px-8 md:px-16 2xl:px-32">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={sectionVariants} className="max-w-[1600px] mx-auto">
           <motion.div variants={itemVariants} className="mb-16">
-            <h2 className="text-5xl font-serif text-slate-900 mb-4">Show, Don't Tell.</h2>
+            <h2 className="text-5xl font-serif text-slate-900 mb-4 font-medium">Show, Don't Tell.</h2>
             <p className="text-lg font-sans text-slate-600 max-w-2xl">Interacting with data isn't just a skill—it's how I think. Here are live, coded simulations of standard petroleum data workflows demonstrating precision and analytical capability.</p>
           </motion.div>
 
           {/* KPI Dashboard */}
-          <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          <motion.div variants={itemVariants} className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-6 mb-6">
             <KPIDashboardCard title="Field Output Simulation" value={4200} suffix=" BBL/d" />
             <KPIDashboardCard title="Estimated Facility Uptime" value={94.3} suffix="%" decimals={1} />
             <KPIDashboardCard title="Target Cost Per Barrel" value={18.2} prefix="$" decimals={1} />
@@ -320,8 +322,10 @@ export default function App() {
       {/* HORIZONTAL TIMELINE */}
       <section id="timeline" ref={timelineRef} className="relative h-[300vh] bg-slate-50 border-y border-slate-200/50">
         <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden py-32">
-          <div className="px-8 md:px-16 max-w-7xl mx-auto w-full mb-16 shrink-0">
-            <h2 className="text-5xl font-serif text-slate-900">Career Trajectory</h2>
+          <div className="px-8 md:px-16 2xl:px-32 w-full mb-16 shrink-0">
+            <div className="max-w-[1600px] mx-auto">
+              <h2 className="text-5xl font-serif text-slate-900 font-medium">Career Trajectory</h2>
+            </div>
           </div>
 
           <div className="relative w-full flex items-center" data-cursor="Scroll">
@@ -385,9 +389,9 @@ export default function App() {
       </section>
 
       {/* EXPANDABLE PROJECTS SECTION */}
-      <section id="projects" className="relative z-10 py-32 px-8 md:px-16 max-w-7xl mx-auto">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={sectionVariants}>
-          <motion.h2 variants={itemVariants} className="text-5xl font-serif text-slate-900 mb-16">Selected Projects</motion.h2>
+      <section id="projects" className="relative z-10 py-32 px-8 md:px-16 2xl:px-32">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: false, amount: 0.2 }} variants={sectionVariants} className="max-w-[1600px] mx-auto">
+          <motion.h2 variants={itemVariants} className="text-5xl font-serif text-slate-900 mb-16 font-medium">Selected Projects</motion.h2>
 
           <LayoutGroup>
             <motion.div variants={itemVariants} className="flex flex-col gap-6">
@@ -433,18 +437,18 @@ export default function App() {
       </section>
 
       {/* FOOTER & LARGE CONTACT */}
-      <footer id="contact" className="relative z-10 bg-slate-900 text-white pt-32 pb-12 px-8 md:px-16 mt-20">
-        <div className="max-w-7xl mx-auto">
+      <footer id="contact" className="relative z-10 bg-slate-900 text-white pt-32 pb-12 px-8 md:px-16 2xl:px-32 mt-20">
+        <div className="max-w-[1600px] mx-auto">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: false }} variants={sectionVariants} className="mb-24">
-            <motion.h2 variants={itemVariants} className="text-5xl md:text-8xl font-serif leading-tight mb-8">
-              Let's engineer the <br/><span className="text-amber-500 italic">next solution.</span>
+            <motion.h2 variants={itemVariants} className="text-5xl md:text-8xl 2xl:text-[10rem] font-serif leading-tight mb-8">
+              Let's engineer the <br/><span className="text-amber-500 italic font-medium">next solution.</span>
             </motion.h2>
             <motion.div variants={itemVariants}>
               <MagneticButton 
                 primary={false}
                 className="group flex items-center gap-4 text-xl font-sans tracking-wide border-b border-amber-500 pb-2 bg-transparent text-white"
                 cursor="Mail"
-                onClick={() => window.location.href = 'mailto:hello@example.com'}
+                onClick={() => window.location.href = 'mailto:annahibukun276@gmail.com'}
               >
                 Contact Annah Ibukun
                 <ArrowUpRight className="w-6 h-6" />
